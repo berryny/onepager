@@ -11,9 +11,6 @@ h1, h2, h3 {
 p {
 	color: #000;
 }
-span {
-	font-weight: bold;
-}
 img {
 	display: block;
 }
@@ -139,6 +136,35 @@ table.table-content img {
 #contact a {
   color: #07aeda;
   text-decoration: none;
+}
+
+/* Using background images */
+#csscoverbackgroundimage.cssBackgroundImages {
+	background-image: url(../img/img-programers.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: top left;
+	background-color: #000;
+	padding: 25px;
+}
+#csscontainbackgroundimage.cssBackgroundImages {
+	background-image: url(../img/img-programers.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: top left;
+	background-color: #000;
+	padding: 25px;
+}
+
+.cssBackgroundImages .container {
+	padding: 25px;
+	color: #fff;
+	position:relative;
+	background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+	background: rgba(204, 204, 204, 0.5);
+}
+.cssBackgroundImages p {
+	color: #000;
 }
 
 /* Footer HTML5 */
