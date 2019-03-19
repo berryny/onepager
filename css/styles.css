@@ -4,11 +4,6 @@ body {
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
-/*
-font-family: 'Oswald', sans-serif;
-font-family: 'Ubuntu', sans-serif;
-font-family: 'Poppins', sans-serif;
-*/
 h1, h2, h3 { 
 	margin: 0;
 	padding: 0;
@@ -28,11 +23,7 @@ address {
 .clear {
 	overflow: auto;
 }
-
 .content {
-	/* top right bottom left*/
-	margin: 0 25px 0 25px;
-	/*top/bottom right/left*/
 	margin: 0 25px;
 }
 .container p {
@@ -62,17 +53,14 @@ address {
 	position: relative;
 	margin-bottom: 40px; 
 	color: #373a3c;
-	border: 5px dotted red;
 }
 #nav .logo { 
-	float: left;
-	border: 1px solid black; 
+	float: left; 
 }
 #nav .nav-list { 
 	float: right;
 	font-weight: bold;
 	font-size: 16px;
-	border: 1px solid blue;
 }
 #nav .nav-list a { 
 	color: #000;
@@ -96,9 +84,8 @@ ul.navbar {
 }
 
 .banner h1 {
-	font-family: 'Poppins', sans-serif;
 	font-size: 64px;
-	text-transform: lowercase;
+	text-transform: uppercase;
 	text-align: center;
 	color: #fff;
 }
@@ -151,6 +138,56 @@ table.table-content img {
   text-decoration: none;
 }
 
+/* Using background images */
+#csscoverbackgroundimage.cssBackgroundImages {
+	background-image: url("../img/img-programers.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0 0;
+	background-color: #9E1CF4;
+	padding: 25px;
+}
+#csscontainbackgroundimage.cssBackgroundImages {
+	background-image: url(../img/img-programers.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-color: #000;
+	padding: 25px;
+}
+
+.cssBackgroundImages .container {
+	padding: 25px;
+	color: #fff;
+	position:relative;
+	background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+	background: rgba(255, 60, 15, .75);
+}
+.cssBackgroundImages p {
+	color: #fff;
+}
+#gallery {}
+#gallerycontainer {
+	position: relative;
+	border: 1px solid red;
+}
+#gallerycontainer .images-details {
+	float: left;
+	width: 45%;
+	display: block;
+	margin-right: 10px;
+}
+#gallerycontainer .images-details:first-child {
+	margin-right: 0;
+}
+#gallerycontainer .images-details:nth-child(3) {
+	margin-right: 50px;
+}
+
+#gallerycontainer .images-details img {
+	display: block;
+	width: 100%;
+}
 /* Footer HTML5 */
 footer {
 	background-color: #444;
@@ -190,23 +227,12 @@ transition: color 12s, font-size 12s;
 -webkit-transition: color 12s, font-size 12s;
    -moz-transition: color 12s, font-size 12s;
      -o-transition: color 12s, font-size 12s;
-
 */
-@media (max-width: 420px) {
-	.logo { 
-		visibility: hidden; 
-	}
-}
+
 @media (max-width: 720px) {
 	.banner h1 {
 		font-size: 32px;
 		transition: font 3s ease;
-	}
-	#nav .logo { 
-		float: right;
-	}
-	#nav .nav-list { 
-		float: left;
 	}
 }
 @media (min-width: 960px) {
