@@ -239,7 +239,8 @@ transition: color 12s, font-size 12s;
 @media (max-width: 720px) {
 	.banner h1 {
 		font-size: 32px;
-		transition: font 3s ease;
+		color: red;
+		transition: font .5s ease, color 3s ease;
 	}
 }
 @media (min-width: 960px) {

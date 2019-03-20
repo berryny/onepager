@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="Creating a slideshow">
+	<meta name="keywords" content="HTML,CSS">
+	<meta name="author" content="Judi Desire">
+	<!-- Responsive Design tag -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Image Slideshow: One Site Pager</title>
+	<!-- CSS for slideshow -->
+	<link rel="stylesheet" type="text/css" href="css/slick.css"/>
+	<!-- Add the new slick-theme.css if you want the default styling -->
+	<link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
+	<style type="text/css">
+	/* Method 1 */
+	.slideshow-wrap {
+		background-color: #444; 
+		padding: 10px 30px;
+	}
+	/* Method 2 */
+	/*.slick-prev:before, .slick-next:before {
+		font-size: 50px;
+	}
+		.slick-prev, .slick-next {
+			z-index: 999;
+			background-color: black;
+			width: 50px;
+			height: 50px;
+		}
+		.slick-prev { left: 0; }
+		.slick-next { right: 0; }
+		*/
+	</style>
+</head>
+<body>
+	<div class="slideshow-wrap">
+		<div class="yummy-food">
+			  <div><img src="img/slideshow/thumbnail1.jpg" alt="Rice Bowl"></div>
+			  <div><img src="img/slideshow/thumbnail2.jpg" alt="Meat"></div>
+			  <div><img src="img/slideshow/thumbnail3.jpg" alt="thumbnail 3"></div>
+			  <div><img src="img/slideshow/thumbnail4.jpg" alt="thumbnail 4"></div>
+			  <div><img src="img/slideshow/thumbnail5.jpg" alt="thumbnail 5"></div>
+			  <div><img src="img/slideshow/thumbnail6.jpg" alt="thumbnail 6"></div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	  <script type="text/javascript" src="js/slick.min.js"></script>
+
+	  <script type="text/javascript">
+	    $(document).ready(function(){
+	    	// Single Item
+	    	/*$('.yummy-food').slick();
+	    	$('.yummy-food').slick({
+	    	  infinite: true,
+	    	  arrows: true,
+	    	  slidesToShow: 3,
+	    	  slidesToScroll: 3
+	    	});
+			*/
+			$('.yummy-food').slick({
+			  dots: true,
+			  infinite: false,
+			  arrows: true,
+			  speed: 300,
+			  slidesToShow: 4,
+			  slidesToScroll: 4,
+			  responsive: [
+			    {
+			      breakpoint: 1024,
+			      settings: {
+			        slidesToShow: 3,
+			        slidesToScroll: 3,
+			        infinite: true,
+			        dots: true
+			      }
+			    },
+			    {
+			      breakpoint: 600,
+			      settings: {
+			        slidesToShow: 2,
+			        slidesToScroll: 2
+			      }
+			    },
+			    {
+			      breakpoint: 480,
+			      settings: {
+			        slidesToShow: 1,
+			        slidesToScroll: 1
+			      }
+			    }
+			    // You can unslick at a given breakpoint now by adding:
+			    // settings: "unslick"
+			    // instead of a settings object
+			  ]
+			});
+							
+	      /*
+	      	$('.yummy-food').slick({
+	        	setting-name: setting-value
+	      	});
+	      */
+	    });
+	  </script>
+</body>
+</html>
