@@ -203,6 +203,17 @@ textarea, select, input, button { outline: none; }
 	margin: 0 auto;
 	width: 80%;
 }
+#gallerycontainer {
+	position: relative;
+}
+#gallerycontainer .images-details {
+	float: left;
+	width: 30%;
+	margin-right: 10px;
+}
+#gallerycontainer .images-details img {
+	width: 100%;
+}
 .form-wrap .form-group {
 	margin-bottom: 10px;
 }
