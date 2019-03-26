@@ -23,6 +23,9 @@
 			window.history.back();
 		}
 	</script>
+	<p>This day is <span id="day"></span></p>
+	<p id="placeholder">This is a placeholder text</p>
+	<p id="replacetext">This is a replacement text</p>
 	<address>123 Somewhere<br>
 		<span class="city"></span> <br>
 		<span id="state"></span> <br>
@@ -37,6 +40,10 @@
 		document.getElementById("map").innerHTML = "Google Map";
 		document.getElementById("map").href = "https://goo.gl/maps/5cicicABPqH2";
 		document.getElementById("map").target = "_blank";
+
+		document.getElementById("placeholder").remove();
+		document.getElementById("replacetext").innerHTML = "";
+		document.getElementById("replacetext").innerHTML = "It's magic!";
 	</script>
 </body>
 </html>

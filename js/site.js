@@ -75,3 +75,12 @@ var myObj = {
 }
 console.log("object: ",myObj, myObj.zipcode)
 
+var myArray = new Array;
+console.log(myArray)
+myArray = ["Monday", "Tuesday", "Sunday"];
+console.log(myArray, myArray[2])
+
+document.addEventListener('DOMContentLoaded', function(event) {
+  console.log("ready!");
+  document.getElementById("day").innerHTML = myArray[1];
+})
