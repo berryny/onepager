@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Learning Javascript</title>
+	<script type="text/javascript">
+		console.log("Internal: Hello World!");
+	</script>
+	<script src="js/site.js"></script>
+	<style>
+		.mystyle { color: red; }
+	</style>
+</head>
+<body>
+	<h1>Learning Javascript</h1>
+	<p>Aute dolore ut aliquip deserunt anim fugiat sit irure sit ex sit laboris consequat et sit non sint ut ut nulla laboris sit cupidatat amet.</p>
+	<p><a href="javascript:window.history.back();">Go Back: Inline</a></p>
+
+	<p>The JavaScript void operator evaluates the given expression and then returns a value of undefined.</p>
+	<a href="javascript:void(0);" onclick="goBack()">Go Back: Function</a>
+	<script>
+		function goBack() {
+			window.history.back();
+		}
+	</script>
+	<address>123 Somewhere<br>
+		<span class="city"></span> <br>
+		<span id="state"></span> <br>
+		<span class="zipcode"></span> <br>
+		<a id="map"></a>
+	</address>
+
+	<script>
+		document.getElementById("state").innerHTML = myObj.state;
+		document.getElementById("state").className = "mystyle";
+
+		document.getElementById("map").innerHTML = "Google Map";
+		document.getElementById("map").href = "https://goo.gl/maps/5cicicABPqH2";
+		document.getElementById("map").target = "_blank";
+	</script>
+</body>
+</html>
