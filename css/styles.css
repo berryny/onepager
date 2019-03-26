@@ -35,7 +35,9 @@ address {
 	font-size: 36px;
 	margin: 54px 0;
 }
-
+.floatleft {
+	float: left;
+}
 .row-box {
 	position: relative;
 	display: block;
@@ -101,11 +103,11 @@ ul.navbar {
 	position: relative;
 	display: block;
 	width: 100%;
+	margin-bottom: 25px;
 	clear: left;
 }
 
 .blog-content .image-container {
-	float: left;
 	width: 36%;
 	margin-right: 5%;
 }
@@ -113,7 +115,6 @@ ul.navbar {
 	width: 100%;
 }
 .blog-content .post-container {
-	float: left;
 	width: 40%;
 }
 
@@ -351,6 +352,10 @@ transition: color 12s, font-size 12s;
 	.banner h1 {
 		font-size: 32px;
 		transition: font 3s ease;
+	}
+	.blog-content .floatleft {
+		float: none;
+		width: 100%;
 	}
 }
 @media (min-width: 960px) {
