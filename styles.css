@@ -1,0 +1,222 @@
+body { 
+	font-family: "Helvetica Neue",Arial,sans-serif;
+	font-size: 1rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+h1, h2, h3 { 
+	margin: 0;
+	padding: 0;
+}
+p {
+	color: #000;
+}
+img {
+	display: block;
+}
+a {
+	text-decoration: none;
+}
+address {
+	font-style: normal;
+}
+.clear {
+	overflow: auto;
+}
+.content {
+	margin: 0 25px;
+}
+.container p {
+	color: #000;
+	font-size: 14px;
+}
+.container h2 {
+	color: #000;
+	font-size: 36px;
+	margin: 54px 0;
+}
+
+.row-box {
+	position: relative;
+	display: block;
+	width: 100%;
+	clear: left;
+}
+.col {
+	float: left;
+	width: 50%;
+}
+
+/* Style for Nav Bar */
+#nav {
+	display: block;
+	position: relative;
+	margin-bottom: 40px; 
+	color: #373a3c;
+}
+#nav .logo { 
+	float: left; 
+}
+#nav .nav-list { 
+	float: right;
+	font-weight: bold;
+	font-size: 16px;
+}
+#nav .nav-list a { 
+	color: #000;
+}
+ul.navbar {
+	display: block;
+	text-align: right;
+	margin: 15% 0 0 0;
+}
+.navbar li {
+	font-size: 16px;
+	display: inline;
+	margin-right: 23px;
+}
+
+/*Introduction banner box */
+
+.banner {
+	background-color: #009ddc;
+	padding: 20px 40px;
+}
+
+.banner h1 {
+	font-size: 64px;
+	text-transform: uppercase;
+	text-align: center;
+	color: #fff;
+}
+.banner p {
+	font-size: 22px;
+	color: #000;
+	font-weight: 200;
+}
+
+/* Styling for blog box */
+
+.blog-content {
+	position: relative;
+	display: block;
+	width: 100%;
+	clear: left;
+}
+
+.blog-content .image-container {
+	float: left;
+	width: 36%;
+	margin-right: 5%;
+}
+.blog-content .image-container img {
+	width: 100%;
+}
+.blog-content .post-container {
+	float: left;
+	width: 40%;
+}
+
+/* Styling for HTML blog table */
+table.table-content { 
+	display: table;
+	border-collapse: separate;
+	border-spacing: 2px;
+	border-color: red;
+}
+table.table-content td {
+	padding: 0 5% 0 0;
+	vertical-align: top;
+}
+table.table-content img {
+	width: 100%;
+} 
+
+/* Styling for HTML contact box */
+#contact a {
+  color: #07aeda;
+  text-decoration: none;
+}
+
+/* Using background images */
+#csscoverbackgroundimage.cssBackgroundImages {
+	background-image: url(../img/img-programers.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: top left;
+	background-color: #000;
+	padding: 25px;
+}
+#csscontainbackgroundimage.cssBackgroundImages {
+	background-image: url(../img/img-programers.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: top left;
+	background-color: #000;
+	padding: 25px;
+}
+
+.cssBackgroundImages .container {
+	padding: 25px;
+	color: #fff;
+	position:relative;
+	background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+	background: rgba(204, 204, 204, 0.5);
+}
+.cssBackgroundImages p {
+	color: #000;
+}
+
+/* Footer HTML5 */
+footer {
+	background-color: #444;
+	color: gray;
+	margin-top: 5%;
+	padding: 5% 0;
+	text-align: center;
+}
+footer a,
+footer a:link,
+footer a:visited,
+footer a:active {
+	color: #fff;
+}
+
+/*
+Make sure to set grid values in px (not rem, em, or %)
+	sm: 	420px,
+	md: 	720px,
+	lg: 	960px,
+	x-lg: 	1024px
+
+----CSS3 transition
+-- transition sets
+transition: font-size 12s; 	transition is set to font-size at 12 seconds duration
+transition: color 12s; 		transition is set to color at 12 seconds duration
+
+-- combine them all into one declaration:
+transition: all 0.3s ease;
+-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+		-o-transition: all 0.3s ease;
+			-ms-transition: all 0.3s ease;
+
+
+transition: color 12s, font-size 12s;
+-webkit-transition: color 12s, font-size 12s;
+   -moz-transition: color 12s, font-size 12s;
+     -o-transition: color 12s, font-size 12s;
+*/
+
+@media (max-width: 720px) {
+	.banner h1 {
+		font-size: 32px;
+		transition: font 3s ease;
+	}
+}
+@media (min-width: 960px) {
+	.banner h1 {
+		font-size: 60px;
+		transition: font 5s ease;
+	}
+}
