@@ -75,17 +75,84 @@ var myObj = {
 }
 console.log("object: ",myObj, myObj.zipcode)
 
+/* Arrays are used for list; JS doesn't care the type of data in the list*/
+
 var myArray = new Array;
-console.log(myArray)
-myArray = ["Monday", "Tuesday", "Sunday"];
-console.log(myArray, myArray[2])
+console.log(myArray);
+myArray = [0, 1, 2, 'string1', 'string2', 'string3', true, false];
+console.log(myArray, myArray[2]);
+
+var daysoftheweek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+console.log(daysoftheweek, daysoftheweek[0]);
+var d = new Date();
+console.log("date: ", d)
+var getWeekDay = d.getDay();
+console.log("daysoftheweek", daysoftheweek[getWeekDay], "getWeekDay", getWeekDay);
+
+var arrayofStuff = [
+	{'name': 'Judi'}, 
+	[3,4,5],
+	'nifty'
+]
+console.log("arrayofStuff", arrayofStuff.length);
+
+var nycBoroughs = [
+	'Manhattan', 
+	'Brooklyn', 
+	'Queens', 
+	'Bronx', 
+	'Staten Island'
+];
+console.log('nycBoroughs: ', nycBoroughs, nycBoroughs[3])
+nycBoroughs[3] = "The Bronx"
+console.log('boroughs: ', nycBoroughs, nycBoroughs[3])
+/* 
+	Pushing list items to the end of an arrary 
+*/
+nycBoroughs[nycBoroughs.length] = "Westchester";
+console.log('extra boroughs: ', nycBoroughs)
+nycBoroughs.push("Yonkers")
+console.log('push boroughs: ', nycBoroughs)
+
+// Removing last item from the arrary
+nycBoroughs.pop();
+console.log('pop boroughs: ', nycBoroughs)
+
+//Splice (where you want to start, how many to remove)
+nycBoroughs.splice(2, 2)
+console.log('splice boroughs: ', nycBoroughs)
+
+//Using a Strict
+var one = 1, two = 2;
+console.log('one === one', one === one);
+console.log('one == one', one == one);
+console.log('one === two', one === two);
+console.log('one !== two', one !== two);
+//Using a non-Strict
+one = "1";
+console.log('one == one', one == one);
+console.log('one === one', one === one);
+console.log('one != one', one != one);
+
+console.log('one < two', one < two);
+console.log('one > two', one > two);
+console.log('one <= two', one <= two);
+console.log('one >= two', one >= two);
+
+var animal1 = "cow";
+var animal2 = "bear";
+var animal2 = "tiger";
+// And
+console.log('and', (animal1 == 'cow') && (animal2 == 'bear'));
+// Or
+console.log('one || two', one || two);
 
 /*
 	The DOMContentLoaded event fires when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading.
 */
 document.addEventListener('DOMContentLoaded', function(event) {
 	console.log("ready!");
-	document.getElementById("day").innerHTML = myArray[1];
+	document.getElementById("day").innerHTML = daysoftheweek[1];
 
 	document.querySelector(".coursename").innerHTML = "Let's learn ";
 	var header2 = document.getElementsByTagName("h2")[0]
