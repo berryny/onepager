@@ -80,7 +80,23 @@ console.log(myArray)
 myArray = ["Monday", "Tuesday", "Sunday"];
 console.log(myArray, myArray[2])
 
+/*
+	The DOMContentLoaded event fires when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading.
+*/
 document.addEventListener('DOMContentLoaded', function(event) {
-  console.log("ready!");
-  document.getElementById("day").innerHTML = myArray[1];
+	console.log("ready!");
+	document.getElementById("day").innerHTML = myArray[1];
+
+	document.querySelector(".coursename").innerHTML = "Let's learn ";
+	var header2 = document.getElementsByTagName("h2")[0]
+	header2.innerHTML = "Let's learn about ";
+	var small = document.createElement("small");   // Create a <small> 
+	small.innerHTML = "Judi";                   // Insert text
+	header2.appendChild(small);               // Append <small> to <h2>
+
+	var pString = document.getElementsByClassName("coursename");
+	console.log("pString", pString);
+	pString[1].innerHTML = "Basic Web Development";
+
+
 })
