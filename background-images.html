@@ -89,50 +89,86 @@
 		.blogContainer .summary {
 			float: left;
 			width: 30%;
-			position: relative;
+			margin-right: 10px;
 		}
 		.blogContainer .summary img {
 			width: 100%;
 		}
-		.date-holder {
+		.blogContainer .summary .item {
+			position: relative;
+		}
+
+		.blogContainer .summary .date-holder {
 			position: absolute;
 			left: 0;
 			bottom: 0;
 			background-color: green;
-			color: #fff;
-			padding: 29px;
 			text-align: center;
+			padding: 15px;
 		}
-		.date-holder span { display: block; }
+		.blogContainer .summary .date-holder span { 
+			color: #fff;
+			display: block; 
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+		.blogContainer .summary .lead {
+			color: #303030;
+			font-size: 20px;
+			font-weight: bold;
+		}
+		.blogContainer .summary .blogDetail {
+			margin-top: 21px;
+			padding-top: 21px;
+			border-top: 1px dashed #e5e5e5;
+			font-weight: 600;
+			color: #ababab;
+			font-size: 15px;
+		}
 	</style>
 	<div id="blogPost">
 		<div class="blogContainer clear">
 			<div class="summary">
-				<img src="https://wellspring.mikado-themes.com/wp-content/uploads/2016/02/events-image-1.jpg">
-				<div class="date-holder">
-					<div class="date-inner">
-						<span class="date-day">27</span>
-						<span class="date-month">Feb</span>
+				<div class="item">
+					<img src="https://wellspring.mikado-themes.com/wp-content/uploads/2016/02/events-image-1.jpg">
+					<div class="date-holder">
+						<div class="date-inner">
+							<span class="date-day">27</span>
+							<span class="date-month">Feb</span>
+						</div>
 					</div>
 				</div>
+					<p class="lead">The Vegan Diet</p>
+					<p class="blogDetail">Researches have shown that a vegan diet can help do the following: Promote weight loss. Reduce your risk of heart disease by lowering cholesterol levels. Lower your chances of getting certain types of cancer, such as colon cancer</p>
+					<p><a href="#" target="_blank">read more</a></p>
 			</div>
 			<div class="summary">
-				<img src="https://wellspring.mikado-themes.com/event/nutritional-advices/">
-				<div class=date-holder">
-					<div class="date-inner">
-						<span class="date-day">27</span>
-						<span class="date-month">Feb</span>
+				<div class="item">
+					<img src="https://wellspring.mikado-themes.com/wp-content/uploads/2016/02/events-image-2.jpg">
+					<div class="date-holder">
+						<div class="date-inner">
+							<span class="date-day">4</span>
+							<span class="date-month">Apr</span>
+						</div>
 					</div>
 				</div>
+					<p class="lead">What is it?</p>
+					<p class="blogDetail">Veganism is defined as a way of living that attempts to exclude all forms of animal exploitation and cruelty, whether for food, clothing or any other purpose. For these reasons, the vegan diet is devoid of all animal products, including meat, eggs and dairy. People choose to follow a vegan diet for various reasons. These usually range from ethics to environmental concerns, but they can also stem from a desire to improve health.</p>
+					<p><a href="#" target="_blank">read more</a></p>
 			</div>
 			<div class="summary">
-				<img src="https://wellspring.mikado-themes.com/event/nutritional-advices/">
-				<div class=date-holder">
-					<div class="date-inner">
-						<span class="date-day">27</span>
-						<span class="date-month">Feb</span>
+				<div class="item">
+					<img src="https://wellspring.mikado-themes.com/wp-content/uploads/2016/02/events-image-3.jpg">
+					<div class="date-holder">
+						<div class="date-inner">
+							<span class="date-day">19</span>
+							<span class="date-month">Jun</span>
+						</div>
 					</div>
 				</div>
+					<p class="lead">Plant-base or non-animal protein</p>
+					<p class="blogDetail">There are many diferent foods that contein protein without having to eat meat. As we age, protein is important for keeping up muscle mass to stay active, avoid injury, and support a healthy immune system. Choosing non-meat proteins in later years can be a good idea for more than just health or ethical reasons</p>
+					<p><a href="#" target="_blank">read more</a></p>
 			</div>
 		</div>
 	</div>
