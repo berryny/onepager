@@ -304,6 +304,14 @@ for ( i; i < daysoftheweek.length; i++) {
 	console.log('daysoftheweek[i]', daysoftheweek[i])
 }
 
+var navbar = [
+	{
+		"about": "About",
+		"blog" : "Blog",
+		"services": "services",
+		"contact": "Contact"
+	}
+];
 var nycMarkets = [
 	{
 		"accepts_ebt": true,

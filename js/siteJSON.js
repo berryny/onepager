@@ -1,3 +1,17 @@
+var navbar = {
+	"about": "About",
+	"blog" : "Blog",
+	"services": "services",
+	"contact": "Contact"
+};
+
+// Shorthand for $( document ).ready()
+$(function() {
+	for (var n in navbar) {
+		$("ul.navbar").append('<li><a href="#'+n+'">'+navbar[n]+'</a></li>');
+		console.log('navbar', n, navbar[n])
+	}
+});
 $.when(
 	$.getJSON( "https://data.cityofnewyork.us/resource/94pk-v63f.json" ),
 	$.ready
@@ -60,7 +74,5 @@ $.when(
 	} else {
 		console.log('error');		
 	}
-
-
 
 });
