@@ -9,11 +9,38 @@
 	-->
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script src="js/siteJSON.js"></script>
+	<style>
+
+		.clearfix { overflow: auto; }
+		.clearfix:before,
+		.clearfix:after {
+		    content: " "; 
+		    display: table;
+		}
+
+		.clearfix:after {
+		    clear: both;
+		}
+		#dohmh #dohmh_container { 
+			position: relative; 
+			display: flex;
+			flex-wrap: wrap;
+		}
+		#dohmh_container .boxes {
+			float: left;
+			width: 30%;
+		}
+		@media (max-width: 420px) {
+			#dohmh_container .boxes {
+				width: 100%;
+			}
+		}
+	</style>
 </head>
 <body>
 	<h1>DOHMH Farmers Markets and Food Boxes</h1>
 	<p class="lead">This is a list of farmers markets and food box sites across the five boroughs. Farmers market vendors, products, and EBT acceptance varies by venue.</p>
-	<div id="markets">
+	<div id="dohmh">
 		
 	</div>
 </body>

@@ -5,8 +5,8 @@ $.when(
 	// Document is ready.
 	// Value of test.json is passed as `data`.
 	//console.log('data',data)
-	var farmersMarketFoodBox = data[0];
-	console.log('farmersMarketFoodBox', farmersMarketFoodBox);
+	var nycMarkets = data[0];
+	console.log('nycMarkets', nycMarkets);
 	/* 
 		Use tidy markup for visibility. https://www.10bestdesign.com/dirtymarkup/js/
 
@@ -25,4 +25,42 @@ $.when(
 
 		Read 'Fields' dataset at https://dev.socrata.com/foundry/data.cityofnewyork.us/94pk-v63f
 	*/
+
+
+	//Market display
+	if (document.getElementById("dohmh")) {
+		console.log('found #dohmh');
+		var div = document.createElement('div');
+		document.getElementById("dohmh").appendChild(div).setAttribute('id', 'dohmh_container')
+		document.getElementById("dohmh_container").setAttribute('class', 'clearfix');
+
+		console.log('nycMarkets', nycMarkets, nycMarkets.length);
+		var i = 0;
+		for ( i; i < nycMarkets.length; i++) {
+			//nycMarkets[i];
+			//console.log('nycMarkets[i]', nycMarkets[i])
+			document.getElementById("dohmh_container").appendChild(document.createElement('div')).setAttribute('class', 'boxes');
+			console.log(document.getElementsByClassName("boxes")[i]);
+			var cooking = (nycMarkets[i].nyc_dept_of_health_cooking === true) ? "Yes" : "No";
+			var openYearRound = (nycMarkets[i].open_year_round === true) ? "Yes" : "No";
+			var acceptsEBT = (nycMarkets[i].accepts_ebt === true)
+				? "Yes, learn more at <a href='http://otda.ny.gov/workingfamilies/ebt/' target='_blank'>Electronic Benefits Transfer (EBT) Card</a>" 
+				: "No";
+
+			var html = "<h2 class='facilityname'>"+nycMarkets[i].facilityname+"</h2>" +
+						"<address>"+nycMarkets[i].address+"<br>"+nycMarkets[i].borough+"<br>"+nycMarkets[i].zipcode+"</address>" +
+						"<p class='service'><span>"+nycMarkets[i].service_category+"</span><span>"+nycMarkets[i].service_type+"</span></p>" +
+						"<p class='open_year_round'>Open Year Round: "+openYearRound+"</p>" +
+						"<p class='website'><a href='"+nycMarkets[i].website+"' target='_blank'>website</a></p>" +
+						"<p class='nyc_dept_of_health_cooking'>Cooking: "+ cooking +"</p>" + 
+						"<p class='accepts_ebt'>Accepts EBT: "+acceptsEBT+"</p>"
+
+			document.getElementsByClassName("boxes")[i].innerHTML = html;
+		}
+	} else {
+		console.log('error');		
+	}
+
+
+
 });
