@@ -202,7 +202,7 @@ else if(answer === 'NO') {
 }
 else {
 	console.log('else answer', answer)
-	console.log('Boolean(answer.length)	answer.length 	answer', Boolean(answer.length), answer.length, answer);
+	//console.log('Boolean(answer.length)	answer.length 	answer', Boolean(answer.length), answer.length, answer);
 	// Boolean(answer.length)	answer.length 	answer
 	if (answer) {
 		console.log("Your wrote: ", answer);	
@@ -295,6 +295,117 @@ console.log('typeof', typeof thing);
 var thing = [];
 console.log('typeof', typeof thing);
 
+// For loops: Sequential
+var i = 0; //set interger index
+console.log("i, daysoftheweek, daysoftheweek.length", i, daysoftheweek, daysoftheweek.length)
+// ( index; when to stop; increments)
+for ( i; i < daysoftheweek.length; i++) {
+	daysoftheweek[i];
+	console.log('daysoftheweek[i]', daysoftheweek[i])
+}
+
+var nycMarkets = [
+	{
+		"accepts_ebt": true,
+		"additionalinfo": "Open year-round",
+		"address": "Union bet Driggs & N 12th St",
+		"borough": "Brooklyn",
+		"facilityname": "McCarren Park Greenmarket",
+		"nyc_dept_of_health_cooking": false,
+		"open_year_round": true,
+		"saturday": "8am-3pm ",
+		"service_category": "Farmers Markets and Food Boxes ",
+		"service_type": "Farmers Markets",
+		"website": "https://www.grownyc.org/greenmarket",
+		"zipcode": "11222"
+	}, {
+		"accepts_ebt": true,
+		"additionalinfo": "Market open dates: 7/14/2017 to 11/22/2017",
+		"address": "E 163rd St & Hunts Point Ave",
+		"borough": "Bronx",
+		"enddate": "2017-11-22T00:00:00.000",
+		"facilityname": "Harvest Home Hunts Point Market",
+		"nyc_dept_of_health_cooking": false,
+		"open_year_round": false,
+		"service_category": "Farmers Markets and Food Boxes ",
+		"service_type": "Farmers Markets",
+		"startdate": "2017-07-14T00:00:00.000",
+		"website": "https://www.harvesthomefm.org/",
+		"wednesday": "8am-4pm",
+		"zipcode": "10459"
+	}, {
+		"accepts_ebt": true,
+		"additionalinfo": "Market open dates: 6/28/2017 to 11/15/2017",
+		"address": "Clarkson & Troy Aves",
+		"borough": "Brooklyn",
+		"enddate": "2017-11-15T00:00:00.000",
+		"facilityname": "Urban Oasis Farmers Market",
+		"nyc_dept_of_health_cooking": false,
+		"open_year_round": false,
+		"service_category": "Farmers Markets and Food Boxes ",
+		"service_type": "Farmers Markets",
+		"startdate": "2017-06-28T00:00:00.000",
+		"wednesday": "2pm-5:30pm",
+		"zipcode": "11203"
+	}, {
+		"accepts_ebt": false,
+		"additionalinfo": "Market open dates: 7/6/2017 to 11/16/2017",
+		"address": "114-02 Guy R Brewer Blvd",
+		"borough": "Queens",
+		"enddate": "2017-11-16T00:00:00.000",
+		"facilityname": "Queens Hospital Center Farmers Market II",
+		"nyc_dept_of_health_cooking": false,
+		"open_year_round": false,
+		"service_category": "Farmers Markets and Food Boxes ",
+		"service_type": "Farmers Markets",
+		"startdate": "2017-07-06T00:00:00.000",
+		"thursday": "8am-4pm",
+		"zipcode": "11434"
+	}, {
+		"accepts_ebt": true,
+		"additionalinfo": "Market open dates: 7/8/2017 to 10/28/2017",
+		"address": "90 W 164th St bet Ogden & Nelson Aves",
+		"borough": "Bronx",
+		"enddate": "2017-10-28T00:00:00.000",
+		"facilityname": "Taqwa Community Farmers Market",
+		"nyc_dept_of_health_cooking": false,
+		"open_year_round": false,
+		"saturday": "10am-4pm",
+		"service_category": "Farmers Markets and Food Boxes ",
+		"service_type": "Farmers Markets",
+		"startdate": "2017-07-08T00:00:00.000",
+		"zipcode": "10452"
+	}, {
+		"accepts_ebt": true,
+		"additionalinfo": "Open year-round",
+		"address": "506 Lenox Ave bet 135th & 137th Sts",
+		"borough": "Manhattan",
+		"facilityname": "Harvest Home Harlem Hospital Farmers Market",
+		"friday": "8am-7pm",
+		"nyc_dept_of_health_cooking": false,
+		"open_year_round": true,
+		"service_category": "Farmers Markets and Food Boxes ",
+		"service_type": "Farmers Markets",
+		"website": "https://www.harvesthomefm.org/",
+		"zipcode": "10037"
+	}, {
+		"accepts_ebt": true,
+		"additionalinfo": "Market open dates: 6/24/2017 to 10/28/2017",
+		"address": "Livonia Ave bet Powell & Junius Sts",
+		"borough": "Brooklyn",
+		"enddate": "2017-10-28T00:00:00.000",
+		"facilityname": "Isabahlia Farmers Market",
+		"nyc_dept_of_health_cooking": false,
+		"open_year_round": false,
+		"saturday": "8am-3pm ",
+		"service_category": "Farmers Markets and Food Boxes ",
+		"service_type": "Farmers Markets",
+		"startdate": "2017-06-24T00:00:00.000",
+		"website": "https://www.isabahlialoefinc.org/",
+		"zipcode": "11212"
+	}
+];
+
 /*
 	The DOMContentLoaded event fires when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading.
 */
@@ -313,5 +424,38 @@ document.addEventListener('DOMContentLoaded', function(event) {
 	console.log("pString", pString);
 	pString[1].innerHTML = "Basic Web Development";
 
+
+	//Market display
+	if (document.getElementById("dohmh")) {
+		console.log('found #dohmh');
+		var div = document.createElement('div');
+		document.getElementById("dohmh").appendChild(div).setAttribute('id', 'dohmh_container');
+
+		console.log('nycMarkets', nycMarkets, nycMarkets.length);
+		var i = 0;
+		for ( i; i < nycMarkets.length; i++) {
+			//nycMarkets[i];
+			//console.log('nycMarkets[i]', nycMarkets[i])
+			document.getElementById("dohmh_container").appendChild(document.createElement('div')).setAttribute('class', 'boxes');
+			console.log(document.getElementsByClassName("boxes")[i]);
+			var cooking = (nycMarkets[i].nyc_dept_of_health_cooking === true) ? "Yes" : "No";
+			var openYearRound = (nycMarkets[i].open_year_round === true) ? "Yes" : "No";
+			var acceptsEBT = (nycMarkets[i].accepts_ebt === true)
+				? "Yes, learn more at <a href='http://otda.ny.gov/workingfamilies/ebt/' target='_blank'>Electronic Benefits Transfer (EBT) Card</a>" 
+				: "No";
+
+			var html = "<h2 class='facilityname'>"+nycMarkets[i].facilityname+"</h2>" +
+						"<address>"+nycMarkets[i].address+"<br>"+nycMarkets[i].borough+"<br>"+nycMarkets[i].zipcode+"</address>" +
+						"<p class='service'><span>"+nycMarkets[i].service_category+"</span><span>"+nycMarkets[i].service_type+"</span></p>" +
+						"<p class='open_year_round'>Open Year Round: "+openYearRound+"</p>" +
+						"<p class='website'><a href='"+nycMarkets[i].website+"' target='_blank'>website</a></p>" +
+						"<p class='nyc_dept_of_health_cooking'>Cooking: "+ cooking +"</p>" + 
+						"<p class='accepts_ebt'>Accepts EBT: "+acceptsEBT+"</p>"
+
+			document.getElementsByClassName("boxes")[i].innerHTML = html;
+		}
+	} else {
+		console.log('error');		
+	}
 
 })
