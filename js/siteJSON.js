@@ -5,11 +5,18 @@ var navbar = {
 	"contact": "Contact"
 };
 
-// Shorthand for $( document ).ready()
+/*
+	Shorthand for $( document ).ready()
+	https://api.jquery.com/ready/
+*/
 $(function() {
 	for (var n in navbar) {
-		$("ul.navbar").append('<li><a href="#'+n+'">'+navbar[n]+'</a></li>');
 		console.log('navbar', n, navbar[n])
+		/* 
+			Append li into ul container 
+			https://api.jquery.com/append/#append-content-content
+		*/
+		$("ul.navbar").append('<li><a href="#'+n+'">'+navbar[n]+'</a></li>');
 	}
 });
 $.when(
