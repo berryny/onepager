@@ -107,16 +107,27 @@ console.log('nycBoroughs: ', nycBoroughs, nycBoroughs[3])
 nycBoroughs[3] = "The Bronx"
 console.log('boroughs: ', nycBoroughs, nycBoroughs[3])
 /* 
-	Pushing list items to the end of an arrary 
+	Pushing list items to the end of an array 
 */
 nycBoroughs[nycBoroughs.length] = "Westchester";
-console.log('extra boroughs: ', nycBoroughs)
-nycBoroughs.push("Yonkers")
-console.log('push boroughs: ', nycBoroughs)
+console.log('extra boroughs: ', nycBoroughs);
+nycBoroughs.push("Yonkers");
+console.log('push boroughs: ', nycBoroughs);
 
 // Removing last item from the arrary
 nycBoroughs.pop();
-console.log('pop boroughs: ', nycBoroughs)
+console.log('pop boroughs: ', nycBoroughs);
+console.log('what pop? ', nycBoroughs.pop());
+
+//shift(): Remove an item from the beginning of an array
+nycBoroughs.shift();
+console.log('shift boroughs: ', nycBoroughs);
+
+//unshift(): Add items to the beginning of an array
+nycBoroughs.unshift('Long Island');
+nycBoroughs.unshift('Hudson Valley', 'Albany');
+console.log('unshift boroughs: ', nycBoroughs); 
+console.log('unshift() returns length: ', nycBoroughs.unshift()); //unshift() returns the new array length.
 
 //Splice (where you want to start, how many to remove)
 nycBoroughs.splice(2, 2)
@@ -141,11 +152,148 @@ console.log('one >= two', one >= two);
 
 var animal1 = "cow";
 var animal2 = "bear";
-var animal2 = "tiger";
+var animal3 = "tiger";
+var animal4 = "lion";
 // And
-console.log('and', (animal1 == 'cow') && (animal2 == 'bear'));
+console.log('animal &&', animal1 === "cow" && animal2 === "bear");
 // Or
 console.log('one || two', one || two);
+console.log('animal1 || animal2', animal1 === "cow" || animal2 === "lion");
+console.log('animal1 || animal3', animal1 === "bear" || animal3 === "lion");
+console.log('animal1 || animal3 && animal2', animal1 === "bear" || animal3 === "lion" && animal2 === "bear");
+console.log('(animal1 || animal3) && animal2', (animal1 === "bear" || animal3 === "lion") && animal2 === "bear");
+
+// Nor or Bang
+console.log("not true", !true);
+console.log("not false", !false);
+console.log('not animal1 || animal2', !(animal1 === "cow" || animal2 === "bear"));
+
+// If statements
+/*
+	Conpare the difference between alert and window confirm.
+	window.confirm() 
+	alert()
+*/
+
+var answer = window.confirm("Click Ok, get true. Click Cancel, get false.");
+answer;
+// alert('alert box');
+console.log("click answer: ", answer)
+if (answer === true) {
+	console.log("You clicked Ok.");
+}
+
+// If Else statment
+if (answer === true) {
+	console.log("You clicked Ok.");
+} else {
+	console.log("You clicked Cancel.");
+}
+
+var answer = window.prompt("Type YES, NO, MAYBE. Then click Ok");
+if (answer === 'YES') {
+	console.log("You wrote YES.");
+} 
+else if(answer === 'MAYBE') {
+	console.log("You wrote Maybe.");
+}
+else if(answer === 'NO') {
+	console.log("You wrote NO.");
+}
+else {
+	console.log('else answer', answer)
+	console.log('Boolean(answer.length)	answer.length 	answer', Boolean(answer.length), answer.length, answer);
+	// Boolean(answer.length)	answer.length 	answer
+	if (answer) {
+		console.log("Your wrote: ", answer);	
+	} else {
+		console.log("Empty");	
+	}
+}
+
+//answer.toUpperCase()
+//var makeAnswerUpperCase = answer.toUpperCase();
+
+/* 
+	Switch Statement
+	The switch statement is used to perform different actions based on different conditions.
+	https://www.w3schools.com/js/js_switch.asp
+		switch(expression) {
+			case x:
+				// code block
+				break;
+			case y:
+				// code block
+				break;
+			default:
+				// code block
+		}
+*/
+switch(answer) {
+  case "YES":
+    // code block
+    console.log("You wrote YES.");
+    break;
+  case "MAYBE":
+    // code block
+    console.log("You wrote MAYBE.");
+    break;
+  case "NO":
+    // code block
+    console.log("You wrote NO.");
+    break;
+  default:
+    // code block
+    console.log("Your wrote: ", answer);
+}
+//	What happens when you don't include a break?
+
+//One line If statement
+var fname = "FirstName"
+if (fname === "FirstName") console.log("first name", fname);
+
+var transportation = "bicycle", birthdayGift = "bicycle", iGot = false;
+//birthdayGift = "metrocard"
+if( transportation === birthdayGift) {
+	console.log("YAY!")
+	iGot = false;
+} else {
+	console.log('Oh no! I need to give more hints.');
+	iGot = true;
+}
+if (iGot){ console.log("Cry, WAAAAAA!") }
+if (!iGot){ console.log("Scream, WEEEEE!") }
+
+/*
+	Terse ifs are condition statements
+	? is true
+	: is false
+	https://stackoverflow.com/questions/29043135/javascript-one-line-if-else-else-if-statement/34860002
+*/
+var transport = "bicycle";
+//var transport = "subway";
+transport === "bicycle"
+	? console.log("Your transport is bicycle")
+	: console.log("Your transport is subway")
+//Why we don't use semicolon?
+
+// Ternary (conditional) operator setting a variable
+var transportType = transport === "bicycle" ? "type bicycle" : "type subway";
+console.log("transportType", transportType)
+//readability 
+var transportType = (transport === "bicycle") ? "type bicycle" : "type subway";
+
+// Type checking
+var thing = 12;
+console.log('typeof', typeof thing);
+var thing = "twelve";
+console.log('typeof', typeof thing);
+var thing = false;
+console.log('typeof', typeof thing);
+var thing = {};
+console.log('typeof', typeof thing);
+var thing = [];
+console.log('typeof', typeof thing);
 
 /*
 	The DOMContentLoaded event fires when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading.
