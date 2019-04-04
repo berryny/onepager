@@ -81,10 +81,6 @@ $.when(
 	} else {
 		console.log('error');		
 	}
-
-
-
-	
 });
 	var map;
 	function initMap() {
@@ -96,10 +92,11 @@ $.when(
 	}
 
 	$.getJSON( "https://data.cityofnewyork.us/resource/94pk-v63f.json", function( json ) {
-		var nycMarkets =  json[0];
+		console.log('json',json)
+		var dohmh =  json[0];
 
-		for (var i = 0; i < nycMarkets.length; i++) {
-			var coords = nycMarkets[i].location_point.coordinates;
+		for (var i = 0; i < dohmh.length; i++) {
+			var coords = dohmh[i].location_point.coordinates;
 			var latLng = new google.maps.LatLng(coords[1],coords[0]);
 			var marker = new google.maps.Marker({
 				position: latLng,
