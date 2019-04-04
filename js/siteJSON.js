@@ -82,25 +82,26 @@ $.when(
 		console.log('error');		
 	}
 });
-	var map;
-	function initMap() {
-		map = new google.maps.Map(document.getElementById('map'), {
-			zoom: 2,
-			center: new google.maps.LatLng(2.8,-187.3),
-			mapTypeId: 'terrain'
+
+var map;
+function initMap() {
+	map = new google.maps.Map(document.getElementById('map'), {
+		zoom: 2,
+		center: new google.maps.LatLng(2.8,-187.3),
+		mapTypeId: 'terrain'
+	});
+}
+
+$.getJSON( "https://data.cityofnewyork.us/resource/94pk-v63f.json", function( json ) {
+	var dohmh =  json[0];
+
+	for (var i = 0; i < dohmh.length; i++) {
+		var coords = dohmh[i].location_point.coordinates;
+		console.log('coords',coords);
+		var latLng = new google.maps.LatLng(coords[1],coords[0]);
+		var marker = new google.maps.Marker({
+			position: latLng,
+			map: map
 		});
 	}
-
-	$.getJSON( "https://data.cityofnewyork.us/resource/94pk-v63f.json", function( json ) {
-		console.log('json',json)
-		var dohmh =  json[0];
-
-		for (var i = 0; i < dohmh.length; i++) {
-			var coords = dohmh[i].location_point.coordinates;
-			var latLng = new google.maps.LatLng(coords[1],coords[0]);
-			var marker = new google.maps.Marker({
-				position: latLng,
-				map: map
-			});
-		}
-	});
+});
