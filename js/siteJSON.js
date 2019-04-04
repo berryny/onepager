@@ -115,7 +115,7 @@ $.when(
 */
 	     // window.eqfeed_callback = function(results) {
 	        for (var i = 0; i < nycMarkets.length; i++) {
-	          var coords = nycMarkets[i].coordinates;
+	          var coords = nycMarkets[i].location_point.coordinates;
 	          var latLng = new google.maps.LatLng(coords[1],coords[0]);
 	          var marker = new google.maps.Marker({
 	            position: latLng,
