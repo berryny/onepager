@@ -77,7 +77,7 @@ console.log("object: ",myObj, myObj.zipcode)
 
 /* Arrays are used for list; JS doesn't care the type of data in the list*/
 
-var myArray = new Array;
+var myArray = new Array; //var myArray = new Array();
 console.log(myArray);
 myArray = [0, 1, 2, 'string1', 'string2', 'string3', true, false];
 console.log(myArray, myArray[2]);
@@ -304,12 +304,74 @@ for ( i; i < daysoftheweek.length; i++) {
 	console.log('daysoftheweek[i]', daysoftheweek[i])
 }
 
+/*
+	Dynamically populate content to create the main Navigation Bar.
+*/
+
 var navbar = {
-	"about": "About",
+	"home": {
+		"url": "index.html",
+		"heading": "Home"
+	},
+	"about": {
+		"url": "about.html",
+		"heading": "About"
+	},
+	"blog": {
+		"url": "blog.html",
+		"heading": "Blog"
+	},
+	"services": {
+		"url": "services.html",
+		"heading": "Services"
+	},
+	"contact": {
+		"url": "contact.html",
+		"heading": "contact"
+	}
+/*	
+	"about" : "About",
 	"blog" : "Blog",
 	"services": "Services",
-	"contact": "Contact"
+	"contact": "contact"
+*/
 };
+/*
+	JavaScript Functions
+	A JavaScript function is a block of code designed to perform a particular task.
+*/
+
+var location = 0;
+function navigationBar(pageID){ 
+	console.log("bodyID", pageID);
+	if( typeof navbar === 'object') {
+		// For loops: Enumerative
+		for (var n in navbar) {
+			console.log('enter for navbar', location, n, navbar[n].url);
+			/*
+				The hasOwnProperty() method returns a boolean indicating whether the object has 
+				the specified property as its own property (as opposed to inheriting it).
+			*/
+			console.log('navbar hasOwnProperty', navbar.hasOwnProperty(n));
+
+			document.getElementById("navbarUL").appendChild(document.createElement('li')).setAttribute('class', 'item');
+			console.log('get li',document.getElementsByTagName("li")[location]);
+			
+			var nav;
+			if(pageID === "home") {
+				nav = '<a href="'+navbar["home"].url+'#'+n+'">'+navbar[n].heading+'</a>';
+			} else {
+				nav = '<a href="'+navbar[n].url+'">'+navbar[n].heading+'</a>';
+			}
+			document.getElementsByTagName("li")[location].innerHTML = nav;
+			
+			location++;
+			console.log('location++',location);
+		}
+	} else {
+		console.log('Error: argument typeof isnot an object. It is: ', typeof navbar);
+	}
+}
 
 var nycMarkets = [
 	{
@@ -431,27 +493,8 @@ document.addEventListener('DOMContentLoaded', function(event) {
 	console.log("pString", pString);
 	pString[1].innerHTML = "Basic Web Development";
 
-
-	// For loops: Enumerative
-	var l = 0;
-	for (var n in navbar) {
-		console.log('enter for navbar', l, n, navbar[n]);
-		/*
-			The hasOwnProperty() method returns a boolean indicating whether the object has 
-			the specified property as its own property (as opposed to inheriting it).
-		*/
-		console.log('navbar hasOwnProperty', navbar.hasOwnProperty(n));
-
-		document.getElementById("navbarUL").appendChild(document.createElement('li')).setAttribute('class', 'item');
-		console.log('get li',document.getElementsByTagName("li")[l]);
-		
-		var nav = '<a href="#'+n+'">'+navbar[n]+'</a>';
-		document.getElementsByTagName("li")[l].innerHTML = nav;
-		
-		l++;
-		console.log('l++',l);
-	}
-
+	var bodyID = document.getElementsByTagName("body")[0].getAttribute("id");
+	navigationBar(bodyID);
 
 	//Market display
 	if (document.getElementById("dohmh")) {
