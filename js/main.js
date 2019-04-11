@@ -1,56 +1,69 @@
-function goBack() {
-	window.history.back();
-	console.log("window", window);
-	console.log("window.history: ", window.history);
-}
-goBack();
+/*
+	Dynamically populate content to create the main Navigation Bar.
+*/
 
-var navbar = {	
-	"home": {
-		"url": "http://google.com",
+var navbar = {
+	home: {
+		"url": "index.html",
 		"heading": "Home"
 	},
-	"about": {
+	about: {
 		"url": "about.html",
 		"heading": "About Me"
 	},
-	"blog": {
+	blog: {
 		"url": "blog.html",
 		"heading": "Blog"
 	},
-	"contact": {
+	services: {
+		"url": "services.html",
+		"heading": "Services"
+	},
+	contact: {
 		"url": "contact.html",
 		"heading": "Contact Us"
 	}
+/*	
+	"about" : "About",
+	"blog" : "Blog",
+	"services": "Services",
+	"contact": "contact"
+*/
 };
-var location = 0;
-function navigationBar(pageID,logo) {
-	console.log("pageID", pageID, logo, typeof navbar);
-	if (typeof navbar === "object") {
-		console.log("yes");
-		for( var n in navbar){
-			console.log("n -> ", n);
-			console.log("navbar -> ", navbar);
-			document.getElementById("navbarUL").appendChild(
-						document.createElement('li')
-						)
-					.setAttribute('class', 'item');
-
-			var nav;
-			if (pageID === "home") {
-				//<a href="index.html#home">Home</a>
-				nav = '<a href="'+navbar[pageID].url+'#'+n+'">'+navbar[n].heading+'</a>'
+/*
+	JavaScript Functions
+	A JavaScript function is a block of code designed to perform a particular task.
+*/
+var l = 0;
+function navigationBar(pageID){ 
+	console.log("bodyID", pageID);
+	if( typeof navbar === 'object') {
+		console.log('yes', navbar)
+		for (var n in navbar) {
+			console.log('enter for navbar', l, n, navbar[n]);
+			document.getElementById("navbarUL").appendChild(document.createElement('li')).setAttribute('class', 'item');
+			var navHTML;
+			if(pageID === "home") {
+				navHTML = '<a href="'+navbar["home"].url+'#'+n+'">'+navbar[n].heading+'</a>';
 			} else {
-				//<a href="about.html">About</a>
-				nav = '<a href="'+navbar[n].url+'">'+navbar[n].heading+'</a>';
+				navHTML = '<a href="'+navbar[n].url+'">'+navbar[n].heading+'</a>';
 			}
-			document.getElementsByTagName("li")[location].innerHTML = nav;
-			
-			location++;
-			console.log('l++',location);
+			document.getElementsByTagName("li")[l].innerHTML = navHTML;
+			l++;
+			console.log('l',l);
 		}
 	} else {
-		console.log("error");
+		console.log('error');
 	}
-}
-navigationBar("home","img/logo.png");
+} 
+
+/*
+	The DOMContentLoaded event fires when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading.
+*/
+document.addEventListener('DOMContentLoaded', function(event) {
+	console.log("ready!");
+
+	var bodyID = document.getElementsByTagName("body")[0].getAttribute("id");
+	navigationBar(bodyID);
+
+});
