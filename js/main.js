@@ -49,6 +49,13 @@ function navigationBar(pageID){
 
 			if(pageID === n) {
 				//navHTML = '<a href="'+navbar["home"].url+'#'+n+'">'+navbar[n].heading+'</a>';
+				/*if (n !== pageID) {
+					createAnchor.setAttribute('href', navbar[pageID].url+'#'+n);
+					navHTML = createAnchor;					
+				} else {
+					createAnchor.setAttribute('style', "display: none");
+					navHTML = createAnchor;
+				}*/
 				createAnchor.setAttribute('href', navbar[pageID].url+'#'+n);
 				navHTML = createAnchor;
 			} else {
@@ -57,9 +64,11 @@ function navigationBar(pageID){
 				navHTML = createAnchor;
 			}
 			//document.getElementsByTagName("li")[l].innerHTML = navHTML;
-			document.getElementsByTagName("li")[l].appendChild(navHTML);
-			l++;
-			console.log('l',l);
+			if (n !== pageID) {
+				document.getElementsByTagName("li")[l].appendChild(navHTML);
+				l++;
+				console.log('l',l);
+			}
 		}
 	} else {
 		console.log('error');
