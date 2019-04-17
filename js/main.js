@@ -9,7 +9,7 @@ var navbar = {
 	},
 	about: {
 		"url": "about.html",
-		"heading": "About Me"
+		"heading": "Who Are We"
 	},
 	blog: {
 		"url": "blog.html",

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Slick Show</title>
+	<link rel="stylesheet" type="text/css" href="css/slick.css">
+	<link rel="stylesheet" type="text/css" href="css/slick-theme.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+</head>
+<body>
+	<!--<div id="your-class">
+	  <div>
+	  	<img src="img/slideshow/thumbnail1.jpg" alt="thumbnail1">
+	  </div>
+
+	  <div>
+	  	<img src="img/slideshow/thumbnail2.jpg" alt="thumbnail2">
+	  </div>
+	  
+	  <div>
+	  	<img src="img/slideshow/thumbnail3.jpg" alt="thumbnail3">
+	  </div>
+
+	  <div>
+	  	<img src="img/slideshow/thumbnail4.jpg" alt="thumbnail4">
+	  </div>
+
+	  <div>
+	  	<img src="img/slideshow/thumbnail5.jpg" alt="thumbnail5">
+	  </div>
+	  
+	  <div>
+	  	<img src="img/slideshow/thumbnail6.jpg" alt="thumbnail6">
+	  </div>	  
+	</div>-->
+
+	<div class="slick-container">
+		<div id="single">
+		  <div class="myslide">
+		  	<img src="img/slideshow/thumbnail1.jpg" alt="thumbnail1">
+		  	<div class="overlay"></div>
+		  	<div class="text">
+		  		<p>Thumb Image</p>
+		  		<a href="index.html">Learn more</a>
+		  	</div>
+		  </div>
+
+		  <div class="myslide">
+		  	<img src="img/slideshow/thumbnail2.jpg" alt="thumbnail2">
+		  </div>
+		  
+		  <div class="myslide">
+		  	<img src="img/slideshow/thumbnail3.jpg" alt="thumbnail3">
+		  </div>
+
+		  <div class="myslide">
+		  	<img src="img/slideshow/thumbnail4.jpg" alt="thumbnail4">
+		  </div>
+
+		  <div class="myslide">
+		  	<img src="img/slideshow/thumbnail5.jpg" alt="thumbnail5">
+		  </div>
+		  
+		  <div class="myslide">
+		  	<img src="img/slideshow/thumbnail6.jpg" alt="thumbnail6">
+		  </div>	  
+		</div>
+	</div>
+
+	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="js/slick.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+		  $('#single').slick();
+
+		  /*$('#your-class').slick(
+		  		{
+		    		infinite: true,
+		    		slidesToShow: 3,
+		    		slidesToScroll: 3
+		  		}
+		  );*/
+
+		});
+	</script>
+</body>
+</html>
