@@ -8,6 +8,7 @@
 	<!-- Responsive Design tag -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Image Slideshow: One Site Pager</title>
+	<link rel="stylesheet" href="lightbox/css/lightbox.min.css">
 	<!-- CSS for slideshow -->
 	<link rel="stylesheet" type="text/css" href="css/slick.css"/>
 	<!-- Add the new slick-theme.css if you want the default styling -->
@@ -36,7 +37,11 @@
 <body>
 	<div class="slideshow-wrap">
 		<div class="yummy-food">
-			  <div><img src="img/slideshow/thumbnail1.jpg" alt="Rice Bowl"></div>
+			  <div>
+			  	<a class="example-image-link" href="img/slideshow/thumbnail1.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
+			  		<img src="img/slideshow/thumbnail1.jpg" alt="Rice Bowl">
+			  	</a>
+			  	</div>
 			  <div><img src="img/slideshow/thumbnail2.jpg" alt="Meat"></div>
 			  <div><img src="img/slideshow/thumbnail3.jpg" alt="thumbnail 3"></div>
 			  <div><img src="img/slideshow/thumbnail4.jpg" alt="thumbnail 4"></div>
@@ -46,8 +51,9 @@
 	</div>
 
 	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-	  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-	  <script type="text/javascript" src="js/slick.min.js"></script>
+	<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="lightbox/js/lightbox.min.js"></script>
+	<script type="text/javascript" src="js/slick.min.js"></script>
 
 	  <script type="text/javascript">
 	    $(document).ready(function(){
@@ -102,7 +108,24 @@
 	        	setting-name: setting-value
 	      	});
 	      */
+	      $('.slider-for').slick({
+	        slidesToShow: 1,
+	        slidesToScroll: 1,
+	        arrows: false,
+	        fade: true,
+	        asNavFor: '.slider-nav'
+	      });
+	      $('.slider-nav').slick({
+	        slidesToShow: 3,
+	        slidesToScroll: 1,
+	        asNavFor: '.slider-for',
+	        dots: true,
+	        centerMode: true,
+	        focusOnSelect: true
+	      });
+
 	    });
 	  </script>
+
 </body>
 </html>
