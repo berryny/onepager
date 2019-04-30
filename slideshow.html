@@ -33,12 +33,13 @@
 		.slick-next { right: 0; }
 		*/
 	</style>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
 	<div class="slideshow-wrap">
 		<div class="yummy-food">
 			  <div>
-			  	<a class="example-image-link" href="img/slideshow/thumbnail1.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
+			  	<a href="img/slideshow/thumbnail1.jpg" data-lightbox="example-1" data-title="Vegan dish">
 			  		<img src="img/slideshow/thumbnail1.jpg" alt="Rice Bowl">
 			  	</a>
 			  	</div>
@@ -50,8 +51,50 @@
 		</div>
 	</div>
 
-	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<div id="food" class="clearfix">
+		<div class="image floatleft">
+			<img src="img/slideshow/thumbnail3.jpg" alt="thumbnail 3">
+		</div>
+		<div class="text floatleft">
+			<p>this is my text</p>
+		</div>
+	</div>
+	<div id="food" class="clearfix">
+		<div class="col floatleft">
+			<img src="img/slideshow/thumbnail3.jpg" alt="thumbnail 3">
+		</div>
+		<div class="col floatleft">
+			<img src="img/slideshow/thumbnail4.jpg" alt="thumbnail 3">
+		</div>
+		<div class="col floatleft">
+			<img src="img/slideshow/thumbnail5.jpg" alt="thumbnail 3">
+		</div>
+		<div class="col floatleft">
+			<img src="img/slideshow/thumbnail6.jpg" alt="thumbnail 3">
+		</div>
+	</div>	
+
+	<div id="food" class="clearfix">
+		<ul class="mainlist">
+			<li class="item">
+				<ul class="sublist">
+					<li>
+						test 1a
+					</li>
+					<li>text 1b</li>
+				</ul>
+			</li>
+			<li class="item">text 2</li>
+			<li class="item">text 3</li>
+			<li class="item">text 4</li>
+			<li class="item">text 5</li>
+			<li class="item">text 6</li>
+			<li class="item">text 7</li>
+		</ul>
+	</div>
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	<script src="lightbox/js/lightbox.min.js"></script>
 	<script type="text/javascript" src="js/slick.min.js"></script>
 
@@ -126,6 +169,8 @@
 
 	    });
 	  </script>
+
+
 
 </body>
 </html>

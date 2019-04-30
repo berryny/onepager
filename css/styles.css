@@ -20,8 +20,14 @@ a {
 address {
 	font-style: normal;
 }
-.clear {
-	overflow: auto;
+.clear, .clearfix {
+  overflow: auto;
+}
+.clear::after,
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 .content {
 	margin: 0 25px;
@@ -38,6 +44,37 @@ address {
 .floatleft {
 	float: left;
 }
+.floatright {
+	float: right;
+}
+#food .image {
+	width: 49%;
+	margin-right: 1%;
+}
+#food .text {
+	width: 50%;
+}
+#food .image img {
+	display: block;
+	width: 100%;
+}
+#food .col {
+	width: 25%;
+}
+#food .col img {
+	display: block;
+	width: 100%;
+}
+
+#food .mainlist {}
+#food .mainlist li.item {
+	display: inline;
+	vertical-align: top;
+}
+#food .mainlist .sublist {
+	display: inline-block;
+}
+
 .row-box {
 	position: relative;
 	display: block;
