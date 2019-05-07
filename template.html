@@ -1,57 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<!-- 
-		HTML <meta> charset Attribute
-		Specify the character encoding for the HTML document:
-		https://www.w3schools.com/tags/att_meta_charset.asp
-	-->
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Bootstrap Template</title>
 	
-	<!-- Site Details -->
-	<meta name="description" content="Creating a HTML Template">
-	<meta name="keywords" content="HTML,CSS">
-	<meta name="author" content="FirstName LastName">
-	
-	<!-- Responsive Web Design - The Viewport
-		The viewport is the user's visible area of a web page.
 
-		The viewport varies with the device, and will be smaller on a mobile phone than on a computer screen.
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 
-		Before tablets and mobile phones, web pages were designed only for computer screens, and it was common for web pages to have a static design and a fixed size.
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-		Then, when we started surfing the internet using tablets and mobile phones, fixed size web pages were too large to fit the viewport. To fix this, browsers on those devices scaled down the entire web page to fit the screen.
-		https://www.w3schools.com/css/css_rwd_viewport.asp
-	 -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Montserrat|Muli|Raleway|Roboto+Condensed" rel="stylesheet">
 
-	<!-- 
-		Display on browsers tab
-	-->
-	<title>Template</title>
+	<link href="lightbox/css/lightbox.css" rel="stylesheet">
 
-	<!--external CSS
-		foldername: css
-		filename: styles.css
-	-->
-	<link rel="stylesheet" type="text/css" href="foldername/filename.css">
-
-	<!-- internal CSS -->
-	<style type="text/css">
-		h1 { 
-			font-size: 30px;
-		}
-	</style>
-</head> <!-- end of head tag -->
-
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
 <body>
-	<div class="helloword"><!-- open/close quotes -->
-		<h1>Hello World</h1><!-- close h1 tag -->
+	<div class="main-content container-fluid">
 
-		<!-- using inline style for p tag -->
-		<p style="color: red;">This is content</p><!-- close p tag -->
-	
-	</div><!-- close DIV -->
+		<div id="nav-menu" class="container">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			  <a class="navbar-brand" href="#">
+				<img src="img/logo-company.png" alt="Web Development Logo">
+			  </a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			    <span class="navbar-toggler-icon"></span>
+			  </button>
+			  <div class="collapse navbar-collapse" id="navbarNav">
+			    <ul class="navbar-nav">
+			      <li class="nav-item active">
+			        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link" href="#">Features</a>
+			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link" href="#">Pricing</a>
+			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+			      </li>
+			    </ul>
+			  </div>
+			</nav>
+		</div>
 
-</body><!-- close BODY tag -->
-</html><!-- tag ending of HTML -->
+		<div id="hero" class="container-fluid">
+			<div class="jumbotron jumbotron-fluid">
+			  <div class="container">
+			    <h1 class="display-4">Fluid jumbotron</h1>
+			    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+			  </div>
+			</div>
+		</div>
+
+		<div class="information">
+			<div class="container">
+			  <div class="row">
+			    <div class="col-sm">
+			      One of three columns
+			    </div>
+			    <div class="col-sm">
+			      One of three columns
+			    </div>
+			    <div class="col-sm">
+			      One of three columns
+			    </div>
+			  </div>
+			</div>
+		</div>
+
+
+	</div><!--site body-->
+
+
+
+
+	<h1>Hello, World</h1>
+
+	<div class="container">
+	  <!-- Content here -->
+	  <h2>Using a container</h2>
+	  <p>This is a container</p>
+	</div>
+
+	<div class="container-fluid">
+	  <!-- Content here -->
+	  <h2>Using a container-fluid</h2>
+	  <p>This is a container-fluid</p>
+	</div>
+
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="lightbox/js/lightbox.js"></script>
+</body>
+</html>
